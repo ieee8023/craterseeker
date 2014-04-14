@@ -1,0 +1,997 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml>
+	<Document>
+		<name>MER Opportunity Rover</name>
+
+<PhotoOverlay>
+	<name>Cape Victory</name>
+	<Camera>
+		<longitude>-5.50018811984772</longitude>
+		<latitude>-2.0549752776305</latitude>
+		<altitude>2.551513367870487</altitude>
+		<heading>0.002258536217121339</heading>
+		<tilt>77.29304591466781</tilt>
+		<roll>-0.000120790700831159</roll>
+		<altitudeMode>relativeToGround</altitudeMode>
+		<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+	</Camera>
+	<Style>
+		<IconStyle>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+			</Icon>
+		</IconStyle>
+		<ListStyle>
+			<listItemType>check</listItemType>
+			<ItemIcon>
+				<state>open closed error fetching0 fetching1 fetching2</state>
+				<href>http://maps.google.com/mapfiles/kml/shapes/camera-lv.png</href>
+			</ItemIcon>
+			<bgColor>00ffffff</bgColor>
+			<maxSnippetLines>2</maxSnippetLines>
+		</ListStyle>
+	</Style>
+	<Icon>
+		<href>capevictory.png</href>
+	</Icon>
+	<description><![CDATA[
+	
+	<h2>Cape Victory</h2><br/>
+	  <img width="80%" height="293"src="datasets/capevictory.png">
+	
+	        ]]>
+	</description>	
+	
+	
+	<ViewVolume>
+		<leftFov>-25</leftFov>
+		<rightFov>25</rightFov>
+		<bottomFov>-25</bottomFov>
+		<topFov>25</topFov>
+		<near>0.89303</near>
+	</ViewVolume>
+	<Point>
+		<altitudeMode>relativeToGround</altitudeMode>
+		<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		<coordinates>-5.50018811984772,-2.0549752776305,2.551513367870487</coordinates>
+	</Point>
+</PhotoOverlay>
+
+
+
+
+		<PhotoOverlay id="victoria-crater-images" target="mars">
+			<name>Cape Verde</name>
+			<Camera>
+				<longitude>-5.50189504626608</longitude>
+				<latitude>-2.049309059724088</latitude>
+				<altitude>3.206448415221187</altitude>
+				<heading>47.36377992333264</heading>
+				<tilt>90.0000670163203</tilt>
+				<roll>-8.717616998669954e-05</roll>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+			</Camera>
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+			<Icon>
+				<href>Sol952B_P2389_L257F_br.jpg</href>
+			</Icon>
+
+
+			<description><![CDATA[
+
+		<h2>Cape Verde</h2><br/>
+		  <img width="80%" height="293"src="datasets/Sol952B_P2389_L257F_br.jpg">
+
+          ]]>
+			</description>
+
+
+
+			<ViewVolume>
+				<leftFov>-20</leftFov>
+				<rightFov>20</rightFov>
+				<bottomFov>-10</bottomFov>
+				<topFov>10</topFov>
+				<near>1.12226</near>
+			</ViewVolume>
+			<ImagePyramid>
+				<maxWidth>200</maxWidth>
+				<maxHeight>200</maxHeight>
+			</ImagePyramid>
+			<Point>
+				<altitudeMode>relativeToGround</altitudeMode>
+				<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+				<coordinates>-5.50186269011147,-2.049474304060523,3.206448415221187
+				</coordinates>
+			</Point>
+		</PhotoOverlay>
+
+		<PhotoOverlay id="gigapan_12380">
+			<name>Rub al Khali</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>Opportunity's 'Rub al Khali' Panorama</h2>
+		<a href="#gigapan_12380">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12380.jpg">
+		</a>
+
+		<p>
+		  <p>This panoramic image, dubbed "Rub al Khali," was acquired by NASA's Mars Exploration Rover Opportunity on the plains of Meridiani during the period from the rover's 456th to 464th sols on Mars (May 6 to May 14, 2005). Opportunity was about 2 kilometers (1.2 miles) south of "Endurance Crater" at a place known informally as "Purgatory Dune."
+</p><p>
+The rover was stuck in the dune's deep fine sand for more than a month. "Rub al Khali" (Arabic translation: "the empty quarter") was chosen as the name for this panorama because it is the name of a similarly barren, desolate part of the Saudi Arabian desert on Earth.
+</p><p>
+The view spans 360 degrees. It consists of images obtained in 97 individual pointings of the panoramic camera. The camera took images with five camera filters at each pointing. This 22,780-by-6,000-pixel mosaic is an approximately true-color rendering generated using the images acquired through filters admitting light wavelengths of 750, 530, and 480 nanometers.
+</p><p>
+Lighting varied during the nine sols it took to acquire this panorama, resulting in some small image seams within the mosaic. These seams have been smoothed in sky parts of the mosaic to better simulate the vista that a person would see if able to view it all at the same time on Mars.
+</p><p>
+Opportunity's tracks leading back to the north (center of the panorama) are a reminder of the rover's long trek from Endurance Crater. The deep ruts dug by Opportunity's wheels as it became stuck in the sand appear in the foreground. The crest and trough of the last ripple the rover crossed before getting stuck is visible in the center. These wind-formed sand features are only about 10 to 15 centimeters (4 to 6 inches) tall. The crest of the actual ripple where the rover got stuck can be seen just to the right of center. The tracks and a few other places on and near ripple crests can be seen in this color image to be dustier than the undisturbed or "normal" plains soils in Meridiani. Since the time these ruts were made, some of the dust there has been blown away by the wind, reaffirming the dynamic nature of the martian environment, even in this barren, ocean-like desert of sand.
+</p>
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table  border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2005.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 7/28/2005
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12380"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png"  height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12380">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.513091</longitude>
+				<latitude>-2.002932</latitude>
+				<altitude>8</altitude>
+				<heading>0</heading>
+				<tilt>90</tilt>
+				<roll>0</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12380/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-180</leftFov>
+				<rightFov>180</rightFov>
+				<bottomFov>-72</bottomFov>
+				<topFov>22.820017559263</topFov>
+				<near>2</near>
+			</ViewVolume>
+
+			<rotation>0</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>22780</maxWidth>
+				<maxHeight>6000</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.513091,-2.002932</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+		<PhotoOverlay id="gigapan_12381">
+			<name>Olympia</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>Opportunity's 'Olympia' Panorama</h2>
+		<a href="#gigapan_12381">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12381.jpg">
+		</a>
+
+		<p>
+		  <p>This view from the panoramic camera on NASA's Mars Exploration Rover Opportunity shows an outcrop called "Olympia" along the northwestern margin of "Erebus" crater. The view spans about 120 degrees from side to side, generally looking southward. The outcrop exposes a broad expanse of sulfate-rich sedimentary rocks. The rocks were formed predominantly from windblown sediments, but some also formed in environmental conditions from damp to under shallow surface water. After taking the images that were combined into this view, Opportunity drove along a path between sand dunes to the upper left side of the image, where a cliff in the background can be seen. This cliff is known as the "Mogollon Rim." Researchers expect it to expose more than 1 meter (3 feet) of new strata, These strata may represent the highest level observed yet by Opportunity. The image is an approximately true-color rendering generated using the panoramic camera's 750-nanometer, 530-nanometer and 430-nanometer filters.
+</p>
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2005.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 12/5/2005
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12381"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png" height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12381">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.516613</longitude>
+				<latitude>-2.012265</latitude>
+				<altitude>4</altitude>
+				<heading>210</heading>
+				<tilt>90</tilt>
+				<roll>0</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12381/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-60</leftFov>
+				<rightFov>60</rightFov>
+				<bottomFov>-40</bottomFov>
+				<topFov>4.887393217706</topFov>
+				<near>5</near>
+			</ViewVolume>
+
+			<rotation>0</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>7726</maxWidth>
+				<maxHeight>2890</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.516613,-2.012265</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+		<PhotoOverlay id="gigapan_12382">
+			<name>Payson</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>'Payson' Panorama by Opportunity</h2>
+		<a href="#gigapan_12382">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12382.jpg">
+		</a>
+		
+		<p>
+		  The panoramic camera aboard NASA's Mars Exploration Rover Opportunity acquired this panorama of the "Payson" outcrop on the western edge of "Erebus" Crater during Opportunity's sol 744 (Feb. 26, 2006). From this vicinity at the northern end of the outcrop, layered rocks are observed in the crater wall, which is about 1 meters (3.3 feet) thick. The view also shows rocks disrupted by the crater-forming impact event and subjected to erosion over time.
+
+To the left of the outcrop, a flat, thin layer of spherule-rich soils overlies more outcrop materials. The rover is currently traveling down this "road" and observing the approximately 25-meter (82-foot) length of the outcrop prior to departing Erebus crater.
+
+The panorama camera took 28 separate exposures of this scene, using four different filters. The resulting panorama covers about 90 degrees of terrain around the rover. This approximately true-color rendering was made using the camera's 753-nanometer, 535-nanometer and 423-nanometer filters. Image-to-image seams have been eliminated from the sky portion of the mosaic to better simulate the vista a person standing on Mars would see.
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2006.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 3/7/2006
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL</a>/<a href="http://astrogeology.usgs.gov/">USGS</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12382"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png" height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12382">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.516636</longitude>
+				<latitude>-2.01429</latitude>
+				<altitude>2</altitude>
+				<heading>192</heading>
+				<tilt>90</tilt>
+				<roll>0</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12382/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-45</leftFov>
+				<rightFov>45</rightFov>
+				<bottomFov>-20</bottomFov>
+				<topFov>13.14447592068</topFov>
+				<near>5</near>
+			</ViewVolume>
+
+			<rotation>0</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>5295</maxWidth>
+				<maxHeight>1950</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.516636,-2.01429</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+		<PhotoOverlay id="gigapan_12383">
+			<name>Beagle</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>Of Craters and Erosion: Opportunity Examines "Beagle"</h2>
+		<a href="#gigapan_12383">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12383.jpg">
+		</a>
+
+		<p>
+		  <p>This 360-degree view shows one of Opportunity's last stops on the now-familiar surface of Meridiani Planum before reaching different terrains associated with the very large "Victoria Crater." In the center of the mosaic is "Beagle Crater," an impact crater about 35 meters (115 feet) wide. On the far left and wrapping around to the far right, Opportunity's tracks are visible approaching the crater.
+</p><p>
+Though it looks relatively fresh in orbital images, from a closer vantage point Beagle Crater appears moderately eroded. The crater walls are slumped and the middle of the crater bowl is filled with rippled sand. However, a slightly raised crater rim remains, and in a few places (for instance, on the inside left wall), cliffs of outcrop appear to be preserved in the crater. Ejected rocks from Beagle Crater surround the rover, many with the distinctive, fine-grained layering commonly seen in the rocks of Meridiani Planum. Many of these rocks have surfaces smoothed by wind erosion. Wind erosion also formed the sand drifts nestled among the rocks.
+</p><p>
+Because impact craters have well-understood shapes when they form, the altered appearance of eroded craters gives scientists clues to the processes that modified them. By observing how filled an impact crater has become and how worn its edges are, scientists can estimate how long its surface has been exposed to erosion. The many-sided outline of a crater such as Beagle and the blocky appearance of its ejecta may also tell scientists about the strength of the underlying bedrock. Based on observations such as these, scientists know that Beagle Crater is fresher than "Eagle" and "Fram" craters near Opportunity's landing site and more similar in form to "Viking" and "Voyager" craters in the plains to the north of Beagle.
+</p><p>
+Opportunity made other observations at Beagle Crater, such as spectroscopic measurements taken with the panoramic camera and the miniature thermal emission spectrometer, to help scientists assess the composition of the rocks and determine whether Beagle Crater was excavated into the surface rocks of Meridiani Planum or into the ejecta blanket of Victoria Crater.
+</p><p>
+Beagle Crater takes its unofficial name from a great ship of exploration, the HMS Beagle, whose most famous passenger was British naturalist Charles Darwin. During the Beagle expedition around the world, Darwin conducted many of the observations that led to his theory of natural selection. Scientists have unofficially named many rocks and features in the area of Beagle Crater after the Galapagos Islands and the varieties of finches Darwin observed there. The name Beagle Crater also commemorates the ill-fated British lander, Beagle 2, reminding us how difficult space exploration can be.
+</p><p>
+Opportunity took the mosaic of images that make up this 360-degree view of the rover's surroundings with the panoramic camera on the rover's 901st through 904th sols, or Martian days (Aug. 6 through Aug. 9, 2006), of exploration. This is an approximate true-color image combining exposures taken through the panoramic camera's 753-nanometer, 535-namometer, and 432-nanometer filters.
+</p>
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table  border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2006.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 9/13/2006
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL</a>/<a href="http://astrogeology.usgs.gov/">USGS</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12383"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png" height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12383">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.507519</longitude>
+				<latitude>-2.042525</latitude>
+				<altitude>3.5</altitude>
+				<heading>320</heading>
+				<tilt>92</tilt>
+				<roll>0</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12383/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-180</leftFov>
+				<rightFov>180</rightFov>
+				<bottomFov>-45</bottomFov>
+				<topFov>5.943543153796</topFov>
+				<near>1</near>
+			</ViewVolume>
+
+			<rotation>0</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>23115</maxWidth>
+				<maxHeight>3271</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.507519,-2.042525</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+		<PhotoOverlay id="gigapan_12384">
+			<name>Cape Verde 2</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>Layers of 'Cape Verde' in 'Victoria Crater'</h2>
+		<a href="#gigapan_12384">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12384.jpg">
+		</a>
+
+		<p>
+		  <p>This view of Victoria crater is looking north from "Duck Bay" towards the dramatic promontory called "Cape Verde." The dramatic cliff of layered rocks is about 50 meters (about 165 feet) away from the rover and is about 6 meters (about 20 feet) tall. The taller promontory beyond that is about 100 meters (about 325 feet) away, and the vista beyond that extends away for more than 400 meters (about 1300 feet) into the distance. This is an approximately true color rendering of images taken by the panoramic camera (Pancam) on NASA's Mars Exploration Rover Opportunity during the rover's 952nd sol, or Martian day, (Sept. 28, 2006) using the camera's 750-nanometer, 530-nanometer and 430-nanometer filters.
+</p>
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table  border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2006.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 10/6/2006
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12384"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png"  height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12384">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.502464</longitude>
+				<latitude>-2.049534</latitude>
+				<altitude>2</altitude>
+				<heading>47</heading>
+				<tilt>90</tilt>
+				<roll>-1</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12384/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-27.85</leftFov>
+				<rightFov>27.85</rightFov>
+				<bottomFov>-13</bottomFov>
+				<topFov>2.94128959276</topFov>
+				<near>10</near>
+			</ViewVolume>
+
+			<rotation>-1</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>3536</maxWidth>
+				<maxHeight>1012</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.502464,-2.049534</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+		<PhotoOverlay id="gigapan_12385">
+			<name>Cabo Frio</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>Layers of 'Cabo Frio' in 'Victoria Crater'</h2>
+		<a href="#gigapan_12385">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12385.jpg">
+		</a>
+
+		<p>
+		  <p>This view of "Victoria crater" is looking southeast from "Duck Bay" towards the dramatic promontory called "Cabo Frio." The small crater in the right foreground, informally known as "Sputnik", is about 20 meters (about 65 feet) away from the rover, the tip of the spectacular, layered, Cabo Frio promontory itself is about 200 meters (about 650 feet) away from the rover, and the exposed rock layers are about 15 meters (about 50 feet) tall. This is an approximately true color rendering of images taken by the panoramic camera (Pancam) on NASA's Mars Exploration Rover Opportunity during the rover's 952nd sol, or Martian day, (Sept. 28, 2006) using the camera's 750-nanometer, 530-nanometer and 430-nanometer filters.
+</p>
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table  border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2006.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12385"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png"  height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12385">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.502494</longitude>
+				<latitude>-2.04958</latitude>
+				<altitude>1</altitude>
+				<heading>173</heading>
+				<tilt>90</tilt>
+				<roll>-2</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12385/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-30</leftFov>
+				<rightFov>30</rightFov>
+				<bottomFov>-15</bottomFov>
+				<topFov>2.180544105523</topFov>
+				<near>3</near>
+			</ViewVolume>
+
+			<rotation>-2</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>3639</maxWidth>
+				<maxHeight>1042</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.50189504626608,-2.049309059724088</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+		<PhotoOverlay id="gigapan_12386">
+			<name>Cape Verde 3</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>Panorama from 'Cape Verde'</h2>
+		<a href="#gigapan_12386">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12386.jpg">
+		</a>
+
+		<p>
+		  <p>NASA's Mars Exploration Rover Opportunity captured this vista of "Victoria Crater" from the viewpoint of "Cape Verde," one of the promontories that are part of the scalloped rim of the crater. Opportunity drove onto Cape Verde shortly after arriving at the rim of Victoria in September 2006. The view combines hundreds of exposures taken by the rover's panoramic camera (Pancam). The camera began taking the component images during Opportunity's 970th Martian day, or sol, on Mars (Oct. 16, 2006). Work on the panorama continued through the solar conjunction period, when Mars was nearly behind the sun from Earth's perspective and communications were minimized. Acquisition of images for this panorama was completed on Opportunity's 991st sol (Nov. 7, 2006).
+<a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL</a>/<a href="http://astrogeology.usgs.gov/">USGS</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+</p><p>
+The top of Cape Verde is in the immediate foreground at the center of the image. To the left and right are two of the more gradually sloped bays that alternate with the cliff-faced capes or promontories around the rim of the crater. "Duck Bay," where Opportunity first reached the rim, is to the right. Beyond Duck Bay counterclockwise around the rim, the next promontory is "Cabo Frio," about 150 meters (500 feet) from the rover. On the left side of the panorama is "Cape St. Mary," the next promontory clockwise from Cape Verde and about 40 meters (130 feet) from the rover. The vantage point atop Cape Verde offered a good view of the rock layers in the cliff face of Cape St. Mary, which is about 15 meters or 50 feet tall. By about two weeks after the Pancam finished collecting the images for this panorama, Opportunity had driven to Cape St. Mary and was photographing Cape Verde's rock layers.
+</p><p>
+The far side of the crater lies about 800 meters (half a mile) away, toward the southeast.
+</p><p>
+This approximately true-color view combines images taken through three of the Pancam's filters, admitting light with wavelengths centered at 750 nanometers (near infrared), 530 nanometers (green) and 430 nanometers (violet).
+</p>
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table  border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2007.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 1/3/2007
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12386"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png"  height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12386">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.501539</longitude>
+				<latitude>-2.048987</latitude>
+				<altitude>2</altitude>
+				<heading>134</heading>
+				<tilt>90</tilt>
+				<roll>0</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12386/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-140</leftFov>
+				<rightFov>140</rightFov>
+				<bottomFov>-33</bottomFov>
+				<topFov>3.979668716415</topFov>
+				<near>5</near>
+			</ViewVolume>
+
+			<rotation>0</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>18051</maxWidth>
+				<maxHeight>2384</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.501539,-2.048987</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+		<PhotoOverlay id="gigapan_12387">
+			<name>D Star</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>D Star Panorama by Opportunity</h2>
+		<a href="#gigapan_12387">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12387.jpg">
+		</a>
+
+		<p>
+		  <p>NASA's twin Mars Exploration Rovers have been getting smarter as they get older. This view from Opportunity shows the tracks left by a drive executed with more onboard autonomy than has been used on any other drive by a Mars rover.
+</p><p>
+Opportunity made the curving, 15.8-meter (52-foot) drive during its 1,160th Martian day, or sol (April 29, 2007). It was testing a navigational capability called "Field D-star," which enables the rover to plan optimal long-range drives around any obstacles in order to travel the most direct safe route to the drive's designated destination. Opportunity and its twin, Spirit, did not have this capability until the third year after their January 2004 landings on Mars. Earlier, they could recognize hazards when they approached them closely, then back away and try another angle, but could not always find a safe route away from hazards. Field D-Star and several other upgrades were part of new onboard software uploaded from Earth in 2006. The Sol 1,160 drive by Opportunity was a Martian field test of Field D-Star and also used several other features of autonomy, including visual odometry to track the rover's actual position after each segment of the drive, avoidance of designated keep-out zones, and combining information from two sets of stereo images to consider a wide swath of terrain in analyzing the route.
+</p><p>
+Two days later, on Sol 1,162, (May 1, 2007), Opportunity was still at the location it reached during that drive, and the rover's panoramic camera (Pancam) took the exposures combined into this image.
+</p><p>
+Victoria Crater is in the background, at the top of the image. The Sol 1,160 drive began at the place near the center of the image where tracks overlap each other. Tracks farther away were left by earlier drives nearer to the northern rim of the crater. For scale, the distance between the parallel tracks left by the rover's wheels is about 1 meter (39 inches) from the middle of one track to the middle of the other. The rocks in the center foreground are roughly 7 to 10 centimeters (3 to 4 inches) tall. The rover could actually drive over them easily, but for this test, Settings in the onboard hazard-detection software were adjusted to make these smaller rocks be considered dangerous to the rover. The patch of larger rocks to the right was set as a keep-out zone. The location from which this image was taken is where the rover stopped driving to communicate with Earth. A straight line from the starting point to the destination would be 11 meters (36 feet). Opportunity plotted and followed a smoothly curved, efficient path around the rocks, always keeping the rover in safe areas.
+</p><p>
+This view combines separate images taken through the Pancam filters centered on wavelengths of 753 nanometers, 535 nanometers and 432 nanometers to produce an approximately true-color panorama.
+</p>
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table  border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2008.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 1/2/2008
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL-Caltech</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12387"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png"  height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12387">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.493268</longitude>
+				<latitude>-2.045024</latitude>
+				<altitude>3</altitude>
+				<heading>235.5</heading>
+				<tilt>90</tilt>
+				<roll>0</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12387/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-57.5</leftFov>
+				<rightFov>57.5</rightFov>
+				<bottomFov>-43</bottomFov>
+				<topFov>4.79910302071</topFov>
+				<near>4</near>
+			</ViewVolume>
+
+			<rotation>0</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>7581</maxWidth>
+				<maxHeight>3151</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.493268,-2.045024</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+		<PhotoOverlay id="gigapan_12388">
+			<name>Lyell</name>
+			<Snippet></Snippet>
+			<visibility>1</visibility>
+
+			<description><![CDATA[
+
+          <table  border="0" cellpadding="0" cellspacing="0">
+            
+	    
+	   <tr><td>
+		<h2>'Lyell' Panorama inside Victoria Crater</h2>
+		<a href="#gigapan_12388">
+		  <img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/12388.jpg">
+		</a>
+
+		<p>
+		  <p>During four months prior to the fourth anniversary of its landing on Mars, NASA's Mars Exploration Rover Opportunity examined rocks inside an alcove called "Duck Bay" in the western portion of Victoria Crater. The main body of the crater appears in the upper right of this panorama, with the far side of the crater lying about 800 meters (half a mile) away. Bracketing that part of the view are two promontories on the crater's rim at either side of Duck Bay. They are "Cape Verde," about 6 meters (20 feet) tall, on the left, and "Cabo Frio," about 15 meters (50 feet) tall, on the right. The rest of the image, other than sky and portions of the rover, is ground within Duck Bay.
+</p><p>
+Opportunity's targets of study during the last quarter of 2007 were rock layers within a band exposed around the interior of the crater, about 6 meters (20 feet) from the rim. Bright rocks within the band are visible in the foreground of the panorama. The rover science team assigned informal names to three subdivisions of the band: "Steno," "Smith," and "Lyell."
+</p><p>
+This view combines many images taken by Opportunity's panoramic camera (Pancam) from the 1,332nd through 1,379th Martian days, or sols, of the mission (Oct. 23 to Dec. 11, 2007). Images taken through Pancam filters centered on wavelengths of 753 nanometers, 535 nanometers and 432 nanometers were mixed to produce an approximately true-color panorama. Some visible patterns in dark and light tones are the result of combining frames that were affected by dust on the front sapphire window of the rover's camera.
+</p><p>
+Opportunity landed on Jan. 25, 2004, Universal Time, (Jan. 24, Pacific Time) inside a much smaller crater about 6 kilometers (4 miles) north of Victoria Crater, to begin a surface mission designed to last 3 months and drive about 600 meters (0.4 mile).
+</p>
+		</p>
+	    </td></tr>
+	    <tr><td>
+		<hr>
+		<table  border="0" cellpadding="0" cellspacing="0">
+		  <tr><td>
+		      <a href="http://marsrover.nasa.gov/gallery/panoramas/opportunity/2008.html"><b>Mars Exploration Rovers Panorama Gallery</b></a>
+		      <br>
+		      <b>Instrument:</b> Panoramic Camera
+		      <br>
+		      <b>Image Release date:</b> 1/24/2008
+		      <br>
+		      <b>Credit:</b> <a href="http://www.nasa.gov">NASA</a>/<a href="http://www.jpl.nasa.gov/">JPL-Caltech</a>/<a href="http://athena.cornell.edu/">Cornell</a>
+		      <br>
+		    </td>
+		    <td align="right">
+		      <a href="http://gigapan.org/viewGigapan.php?id=12388"><img width="80%" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/missions/images/gigapan_lg_beta.png"  height="60"/></a>
+		      <br>
+		      View this panorama at <a href="http://gigapan.org/viewGigapan.php?id=12388">gigapan.org</a>
+		  </td></tr>
+		</table>
+	    </td></tr>
+	  </table>
+          ]]>
+			</description>
+
+			<Camera>
+				<longitude>-5.502198</longitude>
+				<latitude>-2.049497</latitude>
+				<altitude>1.5</altitude>
+				<heading>6.7</heading>
+				<tilt>90</tilt>
+				<roll>0</roll>
+			</Camera>
+
+			<Style>
+				<IconStyle>
+					<Icon>
+						<href>http://maps.google.com/mapfiles/kml/pal4/icon38.png</href>
+					</Icon>
+				</IconStyle>
+			</Style>
+
+
+			<Icon>
+				<href>http://mw2.google.com/mw-earth-vectordb/planetary/mars1/panos/12388/$[level]/$[x]/$[y].jpg
+				</href>
+			</Icon>
+
+			<shape>sphere</shape>
+
+			<ViewVolume>
+				<leftFov>-180</leftFov>
+				<rightFov>180</rightFov>
+				<bottomFov>-90</bottomFov>
+				<topFov>19.51174155603</topFov>
+				<near>1</near>
+			</ViewVolume>
+
+			<rotation>0</rotation>
+
+			<ImagePyramid>
+				<tileSize>256</tileSize>
+				<maxWidth>23123</maxWidth>
+				<maxHeight>7034</maxHeight>
+				<gridOrigin>upperLeft</gridOrigin>
+			</ImagePyramid>
+
+			<Point>
+				<coordinates>-5.502198,-2.049497</coordinates>
+			</Point>
+
+		</PhotoOverlay>
+
+
+
+
+
+
+
+
+
+
+	</Document>
+</kml>

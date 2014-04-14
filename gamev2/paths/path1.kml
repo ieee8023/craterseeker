@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" hint="target=mars">
+<Document>
+	<name>Paths</name>
+	
+	
+	<Style id="style1"> 
+      <IconStyle> 
+        <Icon></Icon> 
+      </IconStyle> 
+      <LabelStyle> 
+        <scale>1.1</scale> 
+      </LabelStyle> 
+      <LineStyle> 
+        <color>7f0000ff</color> 
+        <width>4</width> 
+      </LineStyle> 
+    </Style> 
+	
+	<Placemark>
+		<name>Path1</name>
+		<styleUrl>#style1</styleUrl> 
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				-5.502647899008307,-2.050580628811385,0 -5.50194611719064,-2.050288572996949,0 -5.5018840030356,-2.049851046023751,0 -5.50186237010899,-2.049533241716704,0 -5.50189504626608,-2.049309059724088,0 -5.502823860073416,-2.049137476882811,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+	
+	<Placemark>
+		<name>Path2</name>
+		<open>1</open>
+		<styleUrl>#style1</styleUrl> 
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				-5.502647899008307,-2.050580628811385,0 -5.50276994788736,-2.050054460894723,0 -5.502804259487442,-2.049324206364023,0 -5.502256615358006,-2.049327876651037,0 -5.501898218508199,-2.049312631224519,0 -5.502826525816262,-2.049137564892638,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+	
+	<Placemark>
+		<name>Path3</name>
+		<open>1</open>
+		<styleUrl>#style1</styleUrl> 
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				-5.502647899008307,-2.050580628811385,0 -5.50276994788736,-2.050054460894723,0 -5.502557685785915,-2.049571682528992,0 -5.502209505840959,-2.049431516603593,0 -5.501892085126856,-2.049308475314807,0 -5.502829190999666,-2.049137653084633,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+	
+	<Placemark>
+		<name>Path4</name>
+		<open>1</open>
+      <styleUrl>#style1</styleUrl> 
+		<LineString>
+			<tessellate>1</tessellate>
+			<coordinates>
+				-5.502647899008307,-2.050580628811385,0 -5.502294110428485,-2.050075148550242,0 -5.501892085126856,-2.049308475314807,0 -5.502829190999666,-2.049137653084633,0 
+			</coordinates>
+		</LineString>
+	</Placemark>
+
+	
+	
+</Document>
+</kml>

@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.2">
+<Document>
+  <Style id="hirise_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/red-listview.png</href></Icon>
+      <scale>0.8</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-hirise&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff0000ff</color>
+      <width>1</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/red-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="hirise_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/red-listview.png</href></Icon>
+      <scale>1.0</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-hirise&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff0000ff</color>
+      <width>3</width>
+    </LineStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/red-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="hirise">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#hirise_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#hirise_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="hirise_footprint">
+    <LineStyle>
+      <color>ff0000ff</color>
+      <width>1</width>
+    </LineStyle>
+  </Style>
+  <Style id="hirise_preview_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/red-place.png</href></Icon>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-hirise&id=$[id]&v=1&l=en&x=p' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>00000000</color>
+      <width>0</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+  </Style>
+  <Style id="hirise_preview_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/red-place.png</href></Icon>
+      <scale>1.2</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-hirise&id=$[id]&v=1&l=en&x=p' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff0000ff</color>
+      <width>3</width>
+    </LineStyle>
+  </Style>
+  <StyleMap id="hirise_preview">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#hirise_preview_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#hirise_preview_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="ctx_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/orange-listview.png</href></Icon>
+      <scale>0.8</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-ctx&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff0080ff</color>
+      <width>1</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/orange-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="ctx_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/orange-listview.png</href></Icon>
+      <scale>1.0</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-ctx&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff0080ff</color>
+      <width>3</width>
+    </LineStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/orange-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="ctx">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#ctx_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#ctx_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="ctx_footprint">
+    <LineStyle>
+      <color>ff0080ff</color>
+      <width>1</width>
+    </LineStyle>
+  </Style>
+  <Style id="ctx_overlay_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/orange-place.png</href></Icon>
+      <scale>0.8</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-ctx&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff0080ff</color>
+      <width>1</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+  </Style>
+  <Style id="ctx_overlay_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/orange-place.png</href></Icon>
+      <scale>1.0</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-ctx&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff0080ff</color>
+      <width>3</width>
+    </LineStyle>
+  </Style>
+  <StyleMap id="ctx_overlay">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#ctx_overlay_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#ctx_overlay_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="ctx_preview_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/orange-place.png</href></Icon>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-ctx&id=$[id]&v=1&l=en&x=p' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>00000000</color>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+  </Style>
+  <Style id="ctx_preview_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/orange-place.png</href></Icon>
+      <scale>1.2</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-ctx&id=$[id]&v=1&l=en&x=p' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff0080ff</color>
+      <width>3</width>
+    </LineStyle>
+  </Style>
+  <StyleMap id="ctx_preview">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#ctx_preview_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#ctx_preview_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="moc_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/yellow-listview.png</href></Icon>
+      <scale>0.8</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-moc&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff00e0e0</color>
+      <width>1</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/yellow-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="moc_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/yellow-listview.png</href></Icon>
+      <scale>1.0</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-moc&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff00e0e0</color>
+      <width>3</width>
+    </LineStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/yellow-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="moc">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#moc_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#moc_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="moc_footprint">
+    <LineStyle>
+      <color>ff00e0e0</color>
+      <width>1</width>
+    </LineStyle>
+  </Style>
+  <Style id="hrsc_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/green-listview.png</href></Icon>
+      <scale>0.8</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-hrsc&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff00a000</color>
+      <width>1</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/green-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="hrsc_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/green-listview.png</href></Icon>
+      <scale>1.0</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-hrsc&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ff00a000</color>
+      <width>3</width>
+    </LineStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/green-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="hrsc">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#hrsc_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#hrsc_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="hrsc_footprint">
+    <LineStyle>
+      <color>ff00a000</color>
+      <width>1</width>
+    </LineStyle>
+  </Style>
+  <Style id="crism_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/blue-listview.png</href></Icon>
+      <scale>0.8</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-crism&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ffc00000</color>
+      <width>1</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/blue-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="crism_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/blue-listview.png</href></Icon>
+      <scale>1.0</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-crism&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ffc00000</color>
+      <width>3</width>
+    </LineStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/blue-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="crism">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#crism_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#crism_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="crism_footprint">
+    <LineStyle>
+      <color>ffc00000</color>
+      <width>1</width>
+    </LineStyle>
+  </Style>
+  <Style id="crism_preview_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/blue-place.png</href></Icon>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-crism&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>00000000</color>
+      <width>1</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+  </Style>
+  <Style id="crism_preview_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/blue-place.png</href></Icon>
+      <scale>1.2</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-crism&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ffc00000</color>
+      <width>3</width>
+    </LineStyle>
+  </Style>
+  <StyleMap id="crism_preview">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#crism_preview_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#crism_preview_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="themis_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/purple-listview.png</href></Icon>
+      <scale>0.8</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-themis&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ffa000a0</color>
+      <width>1</width>
+    </LineStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/purple-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="themis_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/purple-listview.png</href></Icon>
+      <scale>1.0</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-themis&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <LineStyle>
+      <color>ffa000a0</color>
+      <width>3</width>
+    </LineStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/purple-photo.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="themis">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#themis_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#themis_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="themis_footprint">
+    <LineStyle>
+      <color>ffa000a0</color>
+      <width>1</width>
+    </LineStyle>
+  </Style>
+  <Style id="placename_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/placemark_circle.png</href></Icon>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-placename&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+  </Style>
+  <Style id="placename_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/placemark_circle.png</href></Icon>
+      <scale>1.2</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-placename&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+  </Style>
+  <StyleMap id="placename">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#placename_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#placename_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="mission_usa_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/flag-usa.png</href></Icon>
+      <hotSpot x="0.35" y="0.06" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-missions&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open closed</state><href>img/icons.kmz/flag-usa.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="mission_usa_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/flag-usa.png</href></Icon>
+      <hotSpot x="0.35" y="0.06" xunits="fraction" yunits="fraction"/>
+      <scale>1.2</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-missions&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open closed</state><href>img/icons.kmz/flag-usa.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="mission_usa">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#mission_usa_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#mission_usa_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="mission_uk_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/flag-uk.png</href></Icon>
+      <hotSpot x="0.35" y="0.06" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-missions&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open closed</state><href>img/icons.kmz/flag-uk.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="mission_uk_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/flag-uk.png</href></Icon>
+      <hotSpot x="0.35" y="0.06" xunits="fraction" yunits="fraction"/>
+      <scale>1.2</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-missions&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open closed</state><href>img/icons.kmz/flag-uk.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="mission_uk">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#mission_uk_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#mission_uk_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="mission_ussr_normal">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/flag-ussr.png</href></Icon>
+      <hotSpot x="0.35" y="0.06" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-missions&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open closed</state><href>img/icons.kmz/flag-ussr.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <Style id="mission_ussr_highlight">
+    <IconStyle>
+      <Icon><href>img/icons.kmz/flag-ussr.png</href></Icon>
+      <hotSpot x="0.35" y="0.06" xunits="fraction" yunits="fraction"/>
+      <scale>1.2</scale>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 380px; }</style><center>$[description]</center><img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-missions&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+      <textColor>ff000000</textColor>
+      <bgColor>ffffffff</bgColor>
+    </BalloonStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open closed</state><href>img/icons.kmz/flag-ussr.png</href></ItemIcon>
+    </ListStyle>
+  </Style>
+  <StyleMap id="mission_ussr">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#mission_ussr_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#mission_ussr_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="highlight_hiker">
+    <IconStyle>
+      <scale>1.3</scale>
+      <Icon><href>img/icons.kmz/hiker.png</href></Icon>
+      <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 520px; }</style><center>
+<table width="500" border="0" cellpadding="0" cellspacing="0">
+  <tr height="45"><td>
+      <img width="500" height="40" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/img/atgtm_title.png">
+      <hr width="100%">
+  </td></tr>
+  <tr><td>
+      <h2>$[name]</h2>
+      <i><font size="4">$[Snippet]</font></i>
+      <p class="fullcaption">
+	$[description]
+      </p>
+  </td></tr>
+  <tr><td>
+      <hr>
+      <blockquote>
+      <table>
+ 	<tr>
+	  <td width=100>
+	    <a href="http://www.workman.com/products/9780761126065/">
+	      <img src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/img/travelers_guide_cover.jpg" width="39" height="66" align="right" />
+	    </a>
+	  </td>
+	  <td>
+	    Excerpted from the
+            book <a href="http://www.workman.com/products/9780761126065/">A
+            Traveler's Guide to Mars</a><br> Copyright &copy; 2003 William
+            K. Hartmann
+	  </td>
+	</tr>
+      </table>
+      </blockquote>
+  </td></tr>
+</table></center>
+<img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-travelersguide&id=$[id]&v=1&l=en&x=n' width='1' height='1'>
+]]></text>
+    </BalloonStyle>
+  </Style>
+  <Style id="normal_hiker">
+    <IconStyle>
+      <scale>1.0</scale>
+      <Icon><href>img/icons.kmz/hiker.png</href></Icon>
+      <hotSpot x="0.5" y="0" xunits="fraction" yunits="fraction"/>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[<style>body { width: 520px; }</style><center>
+<table width="500" border="0" cellpadding="0" cellspacing="0">
+  <tr height="45"><td>
+      <img width="500" height="40" src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/img/atgtm_title.png">
+      <hr width="100%">
+  </td></tr>
+  <tr><td>
+      <h2>$[name]</h2>
+      <i><font size="4">$[Snippet]</font></i>
+      <p class="fullcaption">
+	$[description]
+      </p>
+  </td></tr>
+  <tr><td>
+      <hr>
+      <blockquote>
+      <table>
+ 	<tr>
+	  <td width=100>
+	    <a href="http://www.workman.com/products/9780761126065/">
+	      <img src="http://mw2.google.com/mw-earth-vectordb/planetary/mars2/img/travelers_guide_cover.jpg" width="39" height="66" align="right" />
+	    </a>
+	  </td>
+	  <td>
+	    Excerpted from the
+            book <a href="http://www.workman.com/products/9780761126065/">A
+            Traveler's Guide to Mars</a><br> Copyright &copy; 2003 William
+            K. Hartmann
+	  </td>
+	</tr>
+      </table>
+      </blockquote>
+  </td></tr>
+</table></center>
+<img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-travelersguide&id=$[id]&v=1&l=en&x=n' width='1' height='1'>
+]]></text>
+    </BalloonStyle>
+    <ListStyle>
+      <listItemType>checkHideChildren</listItemType>
+      <ItemIcon><state>open,closed,error</state><href>img/icons.kmz/hiker.png</href></ItemIcon>
+    </ListStyle>
+    <LabelStyle>
+      <color>00000000</color>
+    </LabelStyle>
+  </Style>
+  <StyleMap id="travelersguide">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#normal_hiker</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#highlight_hiker</styleUrl>
+    </Pair>
+  </StyleMap>
+  <Style id="panorama_normal">
+    <IconStyle>
+      <Icon>
+        <href>img/icons.kmz/camera.png</href>
+      </Icon>
+    </IconStyle>
+    <LabelStyle>
+      <scale>0</scale>
+    </LabelStyle>
+    <BalloonStyle>
+      <text><![CDATA[$[description]<img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-missions&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+    </BalloonStyle>
+  </Style>
+  <Style id="panorama_highlight">
+    <IconStyle>
+      <scale>1.2</scale>
+      <Icon>
+        <href>img/icons.kmz/camera.png</href>
+      </Icon>
+    </IconStyle>
+    <BalloonStyle>
+      <text><![CDATA[$[description]<img src='http://mw2.google.com/mw-earth-vectordb/pics/stat.gif?n=mars-missions&id=$[id]&v=1&l=en&x=n' width='1' height='1'>]]></text>
+    </BalloonStyle>
+  </Style>
+  <StyleMap id="panoramaStyle">
+    <Pair>
+      <key>normal</key>
+      <styleUrl>#panorama_normal</styleUrl>
+    </Pair>
+    <Pair>
+      <key>highlight</key>
+      <styleUrl>#panorama_highlight</styleUrl>
+    </Pair>
+  </StyleMap>
+		<Style id="MER_path">
+		<LineStyle>
+			<color>ff0000ff</color>
+			<width>2</width>
+		</LineStyle>
+	</Style>
+	<Style id="MER_names">
+		<IconStyle>
+			<color>00000000</color>
+			<scale>0.0</scale>
+			<Icon>
+			<href>img/icons.kmz/open-diamond.png</href>
+			</Icon>
+		</IconStyle>
+	</Style>
+</Document>
+</kml>

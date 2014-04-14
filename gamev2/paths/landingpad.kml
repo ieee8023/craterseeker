@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom" hint="target=mars">
+<GroundOverlay>
+	<name>LandingPad</name>
+	<description><![CDATA[<img src="http://www.versiononevinyl.com/images/Products/Bulls-Eye.gif"/>]]></description>
+	<Icon>
+		<href>http://www.versiononevinyl.com/images/Products/Bulls-Eye.gif</href>
+		<viewBoundScale>0.75</viewBoundScale>
+	</Icon>
+	<LatLonBox>
+		<north>-2.038905352001612</north>
+		<south>-2.050175042824307</south>
+		<east>-5.492509632271403</east>
+		<west>-5.503786502004383</west>
+	</LatLonBox>
+</GroundOverlay>
+</kml>

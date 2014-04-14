@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://earth.google.com/kml/2.0">
+	<ScreenOverlay>
+		<name>War!</name> <--Change the name. 
+		<visibility>0</visibility>
+		<Icon>
+		<href>http://www.cs.umb.edu/~joecohen/r/img/SatelliteOnly.png</href> <--This will be the web address where the picture is. See below. 
+		</Icon>
+		<overlayXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+		<screenXY x="0" y="1" xunits="fraction" yunits="fraction"/>
+		<rotationXY x="0" y="0" xunits="fraction" yunits="fraction"/>
+		<size x="1" y="1" xunits="fraction" yunits="fraction"/> <--This is the fractional size of the overlay. 0.5 would cover half, 0.25 would cover 1/4th, etc. if you want to change how much of the display window is covered by the overlay. 
+	</ScreenOverlay>
+</kml>

@@ -1,0 +1,1061 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN""http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+
+<!--
+
+	This file is part of Crater Seeker.
+
+    Crater Seeker is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Crater Seeker is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Crater Seeker.  If not, see <http://www.gnu.org/licenses/>.
+
+ -->
+
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="An awesome Mars rover game made by Joseph Paul Cohen that lets you explore Mars and take pictures just like the real rover does" />
+  <title>Crater Seeker</title>
+  <link rel="image_src" type="image/jpeg" href="craterseeker_logo1.png" />
+  <link rel="stylesheet" href="moon.css" type="text/css" />
+  <script src="http://www.google.com/jsapi?key=ABQIAAAAs_yUaeeCeq3DcMZinOfTvRTov9KNn1ndZ8h48iku6vBWm5wnYxSEyXXwD3iODS2ry5WtWl3_ekHIqw"></script>
+  <script type="text/javascript" src="js/math3d.js"></script>
+  <script type="text/javascript" src="js/keyboard-focus-hack.js"></script>
+  <script type="text/javascript" src="js/kmldomwalk.js"></script>
+  <script type="text/javascript" src="truck.js"></script>
+  <script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
+  <script type="text/javascript">
+  
+  
+  function checkChrome(){
+	  
+	  var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+	  
+	  if (!is_chrome){
+		  alert("Please use the Chrome browser to play this game.")
+	  
+	  }
+  }
+  
+  
+MODEL_URL = PAGE_PATH + 'opp.zip';
+
+//MODEL_URL = PAGE_PATH + 'rover2.kmz';
+
+//MODEL_URL = PAGE_PATH + 'LandSpeeder3.kmz';
+
+INIT_LOC = {
+  lat: -2.057,
+  lon: -5.50,
+  heading: 0
+}; 
+PREVENT_START_AIRBORNE = true;
+
+DISTANCE_TO_PHOTO = 10;
+
+var toMuchTilt = 25;
+
+ACCEL= 5.0
+DECEL= 5.0
+MAX_REVERSE_SPEED= 5.0
+GRAVITY= 6.6
+
+V3.EARTH_RADIUS = 1737100;
+
+var MODE;
+var keyone = function(){};
+var keytwo = function(){};
+var keythree = function(){};
+var keyfour = function(){};
+
+google.load("earth", "1");
+
+var ge = null;
+var ge2 = null;
+var appPath = document.location.href.replace(/\/[^\/]*$/, '/');
+var truck;
+
+//Array Remove - By John Resig (MIT Licensed)
+Array.prototype.remove = function(from, to) {
+	  var rest = this.slice((to || from) + 1 || this.length);
+	  this.length = from < 0 ? this.length + from : from;
+	  return this.push.apply(this, rest);
+	};
+
+/**
+ * Shortcuting function
+ */
+function el(e) { return document.getElementById(e); }
+
+/**
+ * Code starts here
+ */
+ function init() {
+	  init3D();
+	}
+
+/*
+ * Tell google to create the plugin at map3d
+ * void createInstance (object domNode, 
+		 				function initCallback, 
+		 				function failureCallback,
+		 				[optional] object options)
+ */
+function init3D() {
+	  google.earth.createInstance(	"map3d", 
+			  						initCallback, 
+			  						function(){}, 
+			  						{ database: 'http://khmdb.google.com/?db=mars' });
+	  
+	  google.earth.createInstance(	"tinymap", 
+			  initCallback2, 
+				function(){}, 
+				{ database: 'http://khmdb.google.com/?db=mars' });
+	}
+
+var minirover = null;
+function initCallback2(object){
+	 
+	ge2 = object;
+	
+	ge2.getWindow().setVisibility(true);
+	ge2.getOptions().setMouseNavigationEnabled(false);
+	
+	lookAt = ge2.createLookAt('');
+	lookAt.set(-2.03, -5.505, 0, ge2.ALTITUDE_RELATIVE_TO_GROUND, 0, 0, 5000);
+	lookAt.setTilt(0);
+	
+	ge2.getOptions().setFlyToSpeed(5);
+	ge2.getView().setAbstractView(lookAt);
+	pois(ge2, function(){
+		
+		phots2 = ge2.getElementsByType("KMLPhotoOverlay");
+	});
+	
+	
+	// create little rover
+	minirover = ge2.createPlacemark('');
+	minirover.setName("YOU");
+	ge2.getFeatures().appendChild(minirover);
+
+	// Create style map for placemark
+	var icon = ge2.createIcon('');
+	icon.setHref('http://maps.google.com/mapfiles/kml/paddle/red-circle.png');
+	var style = ge2.createStyle('');
+	style.getIconStyle().setIcon(icon);
+	minirover.setStyleSelector(style);
+	
+	var point = ge2.createPoint('');
+	point.setLatitude(-2.03);
+	point.setLongitude(-5.505);
+	minirover.setGeometry(point);
+
+}
+
+
+/**
+ * object is ge object
+ * We now build our application on top of the plugin
+ */
+function initCallback(object) {
+	
+	//try{
+
+		ge = object;
+		
+		ge.getWindow().setVisibility(true);
+		ge.getOptions().setAtmosphereVisibility(false);
+		ge.getOptions().setTerrainExaggeration(0);
+		
+		ge.getLayerRoot().enableLayerById(ge.LAYER_TERRAIN, true);
+		var terrainLayer = ge.getLayerRoot().getLayerById(ge.LAYER_TERRAIN);
+		terrainLayer.setVisibility(true);
+		
+		
+		//ge.getOptions().setStatusBarVisibility(true);
+		
+		mainmenu();
+		
+		// egg  ?model=land
+		if (getParameter("model") == "land"){
+		 MODEL_URL = PAGE_PATH + 'LandSpeeder3.kmz';
+		 ACCEL= 50.0
+		 DECEL= 50.0
+		}
+
+		  
+	  
+	//}catch(err){
+	//	alert(err);
+	//}
+	
+}
+	
+	
+function getParameter(parameterName) {
+		var queryString = window.top.location.search.substring(1);
+	   // Add "=" to the parameter name (i.e. parameterName=value)
+	   var parameterName = parameterName + "=";
+	   if ( queryString.length > 0 ) {
+	      // Find the beginning of the string
+	      begin = queryString.indexOf ( parameterName );
+	      // If the parameter name is not found, skip it, otherwise return the value
+	      if ( begin != -1 ) {
+	         // Add the length (integer) to the beginning
+	         begin += parameterName.length;
+	         // Multiple parameters are separated by the "&" sign
+	         end = queryString.indexOf ( "&" , begin );
+	      if ( end == -1 ) {
+	         end = queryString.length
+	      }
+	      // Return the string
+	      return unescape ( queryString.substring ( begin, end ) );
+	   }
+	   // Return "null" if no parameter has been found
+	   return "null";
+	   }
+	}	
+	
+	
+
+/**
+ * Add points of interest
+ */
+function pois(ginstance, callback){
+
+	var href;
+	names = new Array();
+	lats = new Array();
+	lngs = new Array();
+	
+	href = PAGE_PATH + 'datasets/pictures.kml';
+	google.earth.fetchKml(ginstance, href, function(kmlObject) {
+		if (kmlObject){
+			try{
+				objects = kmlObject.getElementsByType("KMLPhotoOverlay");
+				for(i=0;i<objects.getLength();i++){
+					ginstance.getFeatures().appendChild(objects.item(i));
+					
+					if (ginstance == ge){
+						var obj = objects.item(i)
+						names[i] = obj.getName();
+						//phot.getAbstractView().getLatitude(), phot.getAbstractView().getLongitude()
+						lats[i] = obj.getAbstractView().getLatitude();
+						lngs[i] = obj.getAbstractView().getLongitude();
+					}
+				}
+				//setDebug(names);
+			}catch(err){
+				setDebug("Error loading photos : ( " + err);
+				alert("Error loading photos : ( " + err);
+			}
+		}else{
+			setDebug("Error loading photos : ( " + kmlObject);
+			alert("Error loading photos : ( " + kmlObject);
+		}
+		
+		if (callback)
+			callback();
+	});
+}
+
+
+/**
+ * Create the main menu, This is the start of the game
+ */
+function mainmenu(){
+
+	//try{
+			
+			keyone = startGame;
+			
+			$("#explorebtn").animate({
+			    right: '0'
+			  },1000);
+			
+			$("#iexplorebtn").animate({
+			    right: '0'
+			  },1000);
+			 
+			$("#sat").animate({
+			    top: '0'
+			  },1000);
+			
+			
+			//make the background fly around
+			introflyaround();
+			//startGame();
+	
+	//}catch(err){
+	//	alert("Error setting up menu: " + err);
+	//}
+	
+}
+
+
+
+function startGame(){
+
+	//try{
+
+	
+	if (MODE == "game")
+		return;
+	
+	MODE = "game";
+	
+		
+	$("#introtext").animate({
+	    left: '-800'
+	  },3000,function(){
+		  
+		  $("#introtext").hide();
+	  });
+	
+	$("#iintrotext").animate({
+	    left: '-800'
+	  },3000,function(){
+		  
+		  $("#iintrotext").hide();
+	  });
+	
+	$("#explorebtn").animate({
+	    right: '-300'
+	  },3000,function(){
+		  
+		  $("#explorebtn").hide();
+	  });
+	
+	$("#iexplorebtn").animate({
+	    right: '-300'
+	  },3000,function(){
+		  
+		  $("#iexplorebtn").hide();
+	  });
+	
+	$("#sat").animate({
+	    top: '-930'
+	  },3000,function(){
+		  
+		  $("#sat").hide();
+		  
+	  });
+	
+	pois(ge,function(){
+		
+		phots = ge.getElementsByType("KMLPhotoOverlay");
+	});
+	
+
+	initGame();
+	
+	
+
+	//}catch(err){
+	//	alert("Error starting game: " + err);
+	//}
+			
+			
+}
+
+// Here I use closure like a BOSS
+var calls = 0;
+function setLookAt(lookat, speed, callback){
+	//try{
+		
+		var callto = function() {
+			
+			google.earth.removeEventListener(ge.getView(), 'viewchangeend', callto);
+			calls++;
+			//setDebug(calls);
+			if (callback)
+				callback();
+		}
+		
+		var listener = google.earth.addEventListener(ge.getView(), 'viewchangeend', callto);
+		ge.getOptions().setFlyToSpeed(speed);
+		ge.getView().setAbstractView(lookat);
+		
+	//}catch(err){
+	//	alert("Error setting lookat: " + err);
+	//}
+}
+
+
+function initGame(){
+	
+	
+	initstaticvalues();
+		
+	lookAt = ge.createLookAt('');
+	lookAt.set(-2.057, -5.50, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, 0, 0, 250);
+	lookAt.setTilt(30);
+	// speed to change
+	setLookAt(lookAt,0.1,function(){
+		
+		createScorePanel();
+	
+	
+		truck = new Truck(function(){
+			
+			truck.CAM_HEIGHT = 300;
+			truck.TRAILING_DISTANCE = 50;
+			truck.TILT = 30;
+			
+			truck.optionaltick = eachtick;
+			
+			overhead();
+			truck.showPopup("Lets take some pictures! Drive to some photos<br/><img height='131' width='227' src='img/arrow-keys.gif'/>");
+	
+		});
+	});
+		
+		
+				
+		// set up keybindings
+		
+		keytwo = povtoggle;
+		keythree = slopemaptoggle;
+	
+}
+
+
+// we store variables so we don't need to keey looking them up
+
+var compass_img = null;
+var ccompass = null;
+var ccompassctx = null;
+
+var roll_img = null;
+var croll = null;
+var rollctx = null;
+
+var pitch_img = null;
+var cpitch = null;
+var pitchctx = null;
+
+var phots = null;
+var phots2 = null;
+
+var leastdist = 0;
+
+var names;
+var lats;
+var lngs;
+
+function initstaticvalues(){
+	
+	//try{
+		compass_img = document.getElementById('compass_img');
+		ccompass = document.getElementById('ccompass');
+		ccompassctx = ccompass.getContext('2d');
+		ccompass.setAttribute('width', 73);
+		ccompass.setAttribute('height', 73);
+		
+		level_img = document.getElementById('level_img');
+		
+		croll = document.getElementById('croll');
+		rollctx = croll.getContext('2d');
+		croll.setAttribute('width', 130);
+		croll.setAttribute('height', 100);
+	
+		cpitch = document.getElementById('cpitch');
+		pitchctx = cpitch.getContext('2d');
+		cpitch.setAttribute('width', 130);
+		cpitch.setAttribute('height', 100);
+		
+
+	//}catch(err){
+	//	alert("Error setting up static values: " + err);
+	//}
+	
+}
+
+function eachtick(callback){
+	
+	//try{
+		
+	leastdist = 999999;
+	for (var i = 0; i < phots.getLength(); ++i) {
+		
+		var phot = phots.item(i);
+		
+		var distance = calcDistance(truck.LAT,truck.LNG, lats[i], lngs[i]);
+
+		if (distance <= DISTANCE_TO_PHOTO){
+			// we have reached this photo
+			truck.showPopupLong("<div>You took a photo! Good Job! +200 points<br/>Press the space key to close this window<br/>" + phot.getDescription());
+			
+			ge.getFeatures().removeChild(phot);
+			
+			// update the list now instead now that something is different
+			phots = ge.getElementsByType("KMLPhotoOverlay");
+			
+			// increase score
+			setScore(parseInt(getScore())+1000);
+			
+			// this is for the smaller map
+			if (phots2){
+				//TODO verify that the index is the correct one
+				var phot2 = phots2.item(i);
+				ge2.getFeatures().removeChild(phot2);
+				phots2 = ge2.getElementsByType("KMLPhotoOverlay");
+			}
+			
+			names.remove(i);
+			lngs.remove(i);
+			lats.remove(i);
+
+		}
+		
+		if (distance < leastdist)
+			leastdist = distance;
+		
+	}
+	
+	setPhotos(names.join("<br/>"));
+	
+	computeTilt();
+	//compasssTick();
+	miniroverTick();
+
+	
+
+	
+	
+	
+	
+	
+	
+	//}catch(err){
+	//	alert("Error in tick: " + err);
+	//}
+			
+	if (callback)
+		callback();
+}
+
+function miniroverTick(){
+	
+	if (minirover){
+		minirover.getGeometry().setLatitude(truck.LAT);
+		minirover.getGeometry().setLongitude(truck.LNG);
+		
+		if (leastdist < DISTANCE_TO_PHOTO*5)
+			leastdist = DISTANCE_TO_PHOTO*5;
+		
+		lookAt = ge2.createLookAt('');
+		lookAt.set(truck.LAT, truck.LNG, 0, ge2.ALTITUDE_RELATIVE_TO_GROUND, 0, 0, leastdist*2);
+		lookAt.setTilt(0);
+		lookAt.setHeading(truck.model.getOrientation().getHeading());
+		
+		ge2.getOptions().setFlyToSpeed(5);
+		ge2.getView().setAbstractView(lookAt);
+	}
+}
+
+function compasssTick(){
+	
+	var compassHeading = -parseInt(truck.model.getOrientation().getHeading());
+	
+	ccompassctx.clearRect(0, 0, 300, 150);
+	ccompassctx.save();
+	ccompassctx.translate( 73/2, 73/2);
+	ccompassctx.rotate( compassHeading * Math.PI / 180 );
+	ccompassctx.translate( -73/2, -73/2 );
+	ccompassctx.drawImage(compass_img, 0, 0); 
+	ccompassctx.restore();  
+}
+
+function computeTilt(){
+	
+	var roll = parseInt(truck.HTR[1]);
+	var pitch = parseInt(truck.HTR[2]);
+	
+	setTilt(roll,pitch);
+	
+	// deal with when they tip
+
+	if (truck.popupTimer == 0 && (Math.abs(roll) >= toMuchTilt || Math.abs(pitch) >= toMuchTilt)){
+		truck.showPopup("You cannot tilt more then 25 degrees -100 points!");
+		setScore(getScore() -100);
+	}
+	
+	rollctx.clearRect(0, 0, 130, 100);
+	rollctx.save();
+	rollctx.translate( 130/2, 100/2);
+	rollctx.rotate( roll * Math.PI / 180 );
+	rollctx.translate( -130/2, -100/2 );
+	rollctx.drawImage(level_img, 0, 0); 
+	rollctx.restore();  
+	
+	pitchctx.clearRect(0, 0, 130, 100);
+	pitchctx.save();
+	pitchctx.translate( 130/2, 100/2);
+	pitchctx.rotate( pitch * Math.PI / 180 );
+	pitchctx.translate( -130/2, -100/2 );
+	pitchctx.drawImage(level_img, 0, 0); 
+	pitchctx.restore();  
+}
+
+
+
+
+function calcDistance(x1,y1,x2,y2){
+	return (Math.abs((x2-x1)*100000) + Math.abs((y2-y1)*100000));	
+}
+
+
+
+function pov(){	
+	if (truck){
+		truck.CAM_HEIGHT = 3;
+		truck.TRAILING_DISTANCE = 5;
+		truck.TILT = 90;
+		truck.followspeed = 5;
+	}
+}
+
+function overhead(){	
+	if (truck){
+		truck.CAM_HEIGHT = 250;
+		truck.TRAILING_DISTANCE = 50;
+		truck.TILT = 30;
+		truck.followspeed = 5;
+	}
+}
+
+
+/**
+ * Turn the slope map on and off while driving the rover
+ */
+
+ var SLOPEMAP = "OFF";
+ var kmlObject0;
+ var kmlObject1;
+ var kmlObject2;
+ var kmlObject3;
+var count = 0;
+var fetching = false;
+ 
+ function slopemaptoggle(){
+	 count++;
+	 setDebug(count);
+
+	if (fetching) return;
+		
+ 	if (SLOPEMAP == "OFF"){
+
+ 		fetching = true;
+
+ 		var kmlObject = ge.parseKml('<?xml version="1.0" encoding="UTF-8"?><kml xmlns="http://www.opengis.net/kml/2.2"     xmlns:gx="http://www.google.com/kml/ext/2.2">  <Document><GroundOverlay><name>3</name><drawOrder>0</drawOrder><Icon>   <href>datasets/vic_slope/slope_3.png</href></Icon><LatLonBox>   <north>-2.050867490625893</north>   <south>-2.059656629806852</south>   <east>-5.483748127277837</east>   <west>-5.496205424267232</west></LatLonBox></GroundOverlay><GroundOverlay><name>2</name><drawOrder>0</drawOrder><Icon>   <href>datasets/vic_slope/slope_2.png</href></Icon><LatLonBox>  <north>-2.050761859184041</north>  <south>-2.059799723721239</south>  <east>-5.496066650164862</east>  <west>-5.50852394715428</west></LatLonBox></GroundOverlay><GroundOverlay><name>1</name><drawOrder>0</drawOrder><Icon>   <href>datasets/vic_slope/slope_1.png</href></Icon><LatLonBox>  <north>-2.041482226255391</north>  <south>-2.050923998555466</south>  <east>-5.483695330181096</east>  <west>-5.496152627170501</west></LatLonBox></GroundOverlay><GroundOverlay><name>0</name><drawOrder>0</drawOrder><Icon>   <href>datasets/vic_slope/slope_0.png</href></Icon><LatLonBox>  <north>-2.04145266206549</north>  <south>-2.050894434365563</south>  <east>-5.496111299769534</east>  <west>-5.50856859675894</west></LatLonBox></GroundOverlay>  </Document></kml>');
+ 		
+		//try{
+			if (kmlObject){
+				ge.getFeatures().appendChild(kmlObject);
+				kmlObject3 = kmlObject;
+			}
+			
+			fetching = false;
+			SLOPEMAP = "ON";
+			$("#slope").html("<img src='newimg/button_green.png'/>");
+		//}catch(err){
+			alert("Error turning on slopemap: " + err);
+		//}
+
+ 	}else{
+
+ 		//try{
+ 	 		
+	 		if (kmlObject0)
+	 			ge.getFeatures().removeChild(kmlObject0);
+	 		if (kmlObject1)
+	 			ge.getFeatures().removeChild(kmlObject1);
+	 		if (kmlObject2)
+	 			ge.getFeatures().removeChild(kmlObject2);
+	 		if (kmlObject3)
+	 			ge.getFeatures().removeChild(kmlObject3);
+
+		//}catch(err){
+ 		//	alert("Error turning off slopemap: " + err);
+ 		//}
+ 		
+ 		SLOPEMAP = "OFF";
+ 		$("#slope").html("<img src='newimg/button_yellow.png'/>");
+ 	}
+ 	
+ }
+
+
+
+var VIEW = "OVERHEAD";
+function povtoggle(){
+	
+	if (VIEW == "OVERHEAD"){
+		pov();
+		VIEW = "POV";
+		$("#pov").html("<img src='newimg/button_green.png'/>");
+	}else{
+		overhead();
+		VIEW = "OVERHEAD";
+		$("#pov").html("<img src='newimg/button_yellow.png'/>");
+	}
+}
+
+
+function introflyaround(){
+	MODE = "flyaround";
+	flyaround();
+}
+
+function flyaround(){
+
+	if (MODE == "flyaround"){
+		  lookAt = ge.createLookAt('');
+		  lookAt.set(Math.random()*359, Math.random()*359, 0, ge.ALTITUDE_RELATIVE_TO_GROUND, 100, 0, 300000);
+		  lookAt.setTilt(75);
+		  setLookAt(lookAt,0.15, function(){
+			  
+			  flyaround()
+		  });
+	}
+}
+
+
+
+function createSlopeVisual() {
+	
+      // Roll
+	  var icon = ge.createIcon('');
+	  icon.setHref(PAGE_PATH + 'img/rovertilt2.png');
+	  
+	  var rovertilt0 = ge.createScreenOverlay('rovertilt0');
+	  rovertilt0.setDrawOrder(10);
+	  rovertilt0.setIcon(icon);
+	  rovertilt0.getScreenXY().set(0.5, ge.UNITS_FRACTION, 0.5, ge.UNITS_FRACTION);
+	  rovertilt0.getOverlayXY().set(50, ge.UNITS_PIXELS, 50, ge.UNITS_PIXELS);
+	  rovertilt0.getSize().set(-1, ge.UNITS_PIXELS, -1, ge.UNITS_PIXELS);
+	  ge.getFeatures().appendChild(rovertilt0);
+	  
+	  google.earth.addEventListener(ge.getView(), 'viewchange', function() {
+	    var rovertilt0Heading = truck.HTR[2];
+
+	  	if (truck.popupTimer == 0 && Math.abs(rovertilt0Heading) >= toMuchTilt){
+	  		truck.showPopup("Ahh you are tilting to much! -100 points!");
+	  		setScore(getScore() -100);
+	  	}
+	    
+	    rovertilt0.setRotation(rovertilt0Heading);
+	  });
+
+
+	  // Pitch
+	  var icon = ge.createIcon('');
+	  icon.setHref(PAGE_PATH + 'img/rovertilt.png');
+	  
+	  var rovertilt1 = ge.createScreenOverlay('rovertilt1');
+	  rovertilt1.setDrawOrder(1);
+	  rovertilt1.setIcon(icon);
+	  rovertilt1.getScreenXY().set(0.5, ge.UNITS_FRACTION, 0.5, ge.UNITS_FRACTION);
+	  rovertilt1.getOverlayXY().set(200, ge.UNITS_PIXELS, 50, ge.UNITS_PIXELS);
+	  rovertilt1.getSize().set(-1, ge.UNITS_PIXELS, -1, ge.UNITS_PIXELS);
+	  ge.getFeatures().appendChild(rovertilt1);
+	  
+	  google.earth.addEventListener(ge.getView(), 'viewchange', function() {
+	  var rovertilt1Heading = truck.HTR[1];
+
+	  	if (truck.popupTimer == 0 && Math.abs(rovertilt1Heading) >= toMuchTilt){
+	  		truck.showPopup("Ahh you are tilting to much! -100 points!");
+	  		setScore(getScore() -100);
+	  	}
+		  	
+	  	
+	  	
+	  	//setTilt(truck.popupTimer);
+	    rovertilt1.setRotation(rovertilt1Heading);
+	  });
+
+	  
+	  
+	}
+
+function createCompass() {
+	  // create compass
+	  var icon = ge.createIcon('');
+	  icon.setHref(PAGE_PATH + 'compass.png');
+	  
+	  var compass = ge.createScreenOverlay('');
+	  compass.setDrawOrder(1);
+	  compass.setIcon(icon);
+	  compass.getScreenXY().set(1, ge.UNITS_FRACTION, 0.5, ge.UNITS_FRACTION);
+	  compass.getOverlayXY().set(50, ge.UNITS_PIXELS, 50, ge.UNITS_PIXELS);
+	  compass.getSize().set(-1, ge.UNITS_PIXELS, -1, ge.UNITS_PIXELS);
+	  ge.getFeatures().appendChild(compass);
+	  
+	  google.earth.addEventListener(ge.getView(), 'viewchange', function() {
+	    var compassHeading = truck.model.getOrientation().getHeading();
+	    compass.setRotation(compassHeading);
+	  });
+	}
+
+
+
+function setTilt(roll, pitch){
+
+	if (document.getElementById('rollt'))
+		document.getElementById('rollt').innerHTML = roll;
+	
+	if (document.getElementById('pitcht'))
+		document.getElementById('pitcht').innerHTML = pitch;
+}
+
+function setPhotos(val){
+
+	if (document.getElementById('photos'))
+		document.getElementById('photos').innerHTML = val;
+}
+
+function setDebug(val){
+
+	if (document.getElementById('debug'))
+		document.getElementById('debug').innerHTML = val;
+}
+
+
+function setScore(val){
+
+	if (document.getElementById('score'))
+		document.getElementById('score').innerHTML = val;
+}
+
+function getScore(){
+
+
+	if (document.getElementById('score'))
+		return document.getElementById('score').innerHTML;
+	else
+		return 0;
+}
+
+
+function createScorePanel(callback){
+		
+		$("#sidebar").animate({
+		    left: '0'
+		  },3000);
+		
+		$("#isidebar").animate({
+		    left: '0'
+		  },3000);
+		
+		
+		$("#tinymap").animate({
+		    right: '0'
+		  },3000);
+		
+		$("#itinymap").animate({
+		    right: '0'
+		  },3000);
+		
+		$("#photobar").animate({
+		    right: '0'
+		  },3000,function(){
+			  
+			if (callback)
+				callback();
+		  });
+		
+		$("#iphotobar").animate({
+		    right: '0'
+		  },3000);
+		
+		$("#ccompass").animate({
+		    top: '10'
+		  },3000);
+		
+		setScore(200);
+	}
+
+function gameKeyDown(event) {
+	  if (!event) {
+	    event = window.event;
+	  }
+	  //alert(event.keyCode);
+	  if (event.keyCode == 49) { 
+		  keyone();
+		  event.returnValue = false;
+	  } else if (event.keyCode == 76) { 
+		  keyone();
+		  event.returnValue = false;
+	  } else if (event.keyCode == 50) { 
+		  keytwo();
+		  event.returnValue = false;
+	  } else if (event.keyCode == 51) { 
+		  keythree();
+		  event.returnValue = false;
+	  } else if (event.keyCode == 52) { 
+		  keyfour();
+		  event.returnValue = false;
+	  } else if (event.keyCode == 27) { 
+		  restart();
+		  event.returnValue = false;
+	  }
+	  return false;
+	}
+
+
+function close(){
+	
+	if (truck){		
+		truck = null;
+		truck.enabled = false;
+	}
+	
+	MODE="STOP";
+	
+	if (ge)
+		ge = null;
+
+	if (ge2)
+		ge2 = null;
+	
+}
+
+
+function restart(){
+	
+	close();
+	location.reload(true);
+}
+
+window.onbeforeunload = function(){
+	
+	 close();
+	 return;
+  }
+
+
+
+//click handlers
+
+$(function(){
+	
+	$("#pov").click(function(){
+		povtoggle();
+	});
+	
+	$("#slope").click(function(){
+		slopemaptoggle();
+	});
+	
+	$("#explorebtn").click(function(){
+		startGame();
+	});
+	
+});
+
+
+
+
+  </script>
+</head>
+<body onload='checkChrome() || init()' onkeydown="return keyDown(event) || gameKeyDown(event);" onkeyup="return keyUp(event);">
+<center>
+      <div id="fullscreencontainer" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; overflow: hidden;">
+			<div id='map3d' style="height:100%"></div>
+		  	
+		  	
+		    <div id='sidebar' style="background-image:url(newimg/panel.png);position:absolute;top:0px;left:-215px; z-index: 10;width:215px;height:100%">
+		    	<div style="background-image:url(newimg/score.png);position: absolute;top:20px;left:27.5px;width:160px;height:60px"></div>
+				<div id="score" style="position: absolute;top:43px;left:120px"></div>        
+				
+				<div id="pov" style="position: absolute; top: 90px; left: 30px;"">
+					<img src="newimg/button_yellow.png"/>
+				</div>
+				
+				<div style="position: absolute; top: 140px; left: 34px;"">
+					<img style="margin:auto" src="newimg/pov.png"/>
+				</div>
+				
+				<div id="slope" style="position: absolute; top: 90px; left: 135px;"">
+					<img src="newimg/button_yellow.png"/>
+				</div>
+				
+				<div style="position: absolute; top: 140px; left: 110px;"">
+					<img style="margin:auto" src="newimg/slope_map.png"/>
+				</div>
+				
+				
+				<div style="position: absolute;top:170px;left:12.5px;background-image:url(newimg/levels.png);width:190px;height:300px;">
+					
+					<canvas id="croll" style="position: absolute; top: 42px; left: 31px;width:130px;height:100px;"></canvas>
+					<img src="newimg/levels2.png" alt="" id="roll" style="visibility: hidden;width:130px;height:100px;"/> 
+					<canvas id="cpitch" style="position: absolute; top: 160px; left: 31px;width:130px;height:100px;"></canvas>
+					
+
+					<div id="rollt" style="position: absolute; top: 126px; left: 120px;">0</div>
+					<div id="pitcht" style="position: absolute; top: 246px; left: 120px;">0</div>
+				</div>
+			</div>
+			<iframe id="isidebar" style="position:absolute;top:0px;left:-215px; z-index: 9;width:215px;height:100%" frameborder="0" scrolling="no" src="javascript:void(0);"></iframe>
+			
+			<div id='tinymap' style="background-image:url(newimg/panel.png);padding:10px ;position:absolute;top:0px;right:-220px; z-index: 9;width:200px;height:200px;"></div>
+			<iframe id="itinymap" style="padding:10px ;position:absolute;top:0px;right:-220px; z-index: 8;width:200px;height:200px;" frameborder="0" scrolling="no" src="javascript:void(0);"></iframe>
+			
+			<div id='photobar' style="background-image:url(newimg/panel.png);position:absolute;top:210px;right:-120px; z-index: 9;width:120px;height:300px;color:white;">
+				<br/><img src="http://maps.google.com/mapfiles/kml/pal4/icon38.png" alt="take photos"></img><br/>Photos left: <br/><span style="" id="photos"></span> <br/> <span id="debug"></span>
+			</div>
+			<iframe id="iphotobar" style="position:absolute;top:210px;right:-120px; z-index: 8;width:120px;height:300px;" frameborder="0" scrolling="no" src="javascript:void(0);"></iframe>
+			
+			<div id='explorebtn' style="position:absolute;top:10px;right:-300px; z-index: 9;width:300px;height:343px;">
+				<img src="img/explore.png"></img>
+			</div>
+			<iframe id="iexplorebtn" style="position:absolute;top:10px;right:-300px; z-index: 8;width:300px;height:343px;" frameborder="0" scrolling="no" src="javascript:void(0);"></iframe>
+			
+			<div id='introtext' style="background-image:url(newimg/panell.png);position:absolute;bottom:0px;left:0px; z-index: 9;width:800px;height:140px;">
+				<span style="color: white;">
+				<span style="font-size: xx-large;">Mars Crater Seeker</span><br/>
+				Created by Joseph Paul Cohen, UMASS Boston<br/>
+				in collaboration with the Ohio State University,<br/>
+				the Museum of Science Boston, and the University of Cincinnati<br/>
+				Graphics by Veronica Carrillo Marquez<br/>
+				Sponsored by NASA
+				</span>
+			</div>
+			<iframe id="iintrotext" style="position:absolute;bottom:0px;left:0px; z-index: 8;width:800px;height:140px;" frameborder="0" scrolling="no" src="javascript:void(0);"></iframe>
+
+			<div id='sat' style="position:absolute;top:10px;left:10px; z-index: 7;width:200px;height:200px;">
+				<img src="img/SatelliteOnly_s.png"></img>
+			</div>
+			
+			<img id="compass_img"  src="compass.png" style="width:73px;height:73px;" ></img>
+			<img src="newimg/levels2.png" alt="" id="level_img" style="width:130px;height:100px;"/> 
+			<canvas id="ccompass" style="position:absolute;top:-85px;right:220px; z-index: 10;width:73px;height:73px;" ></canvas>			
+    </div>
+</center>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-19564702-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+
+</body>
+</html>

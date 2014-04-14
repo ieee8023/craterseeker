@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title>test</title>
+    <script type="text/javascript">
+    canvasW = canvasH = 800;
+    imgW = imgH = 128;
+    function startup() {
+      var canvas = document.getElementById('canvas');
+      var ctx = canvas.getContext('2d');
+      // Just to see what I do...
+      //ctx.strokeRect(0, 0, canvasW, canvasH);
+      var img = document.getElementById('compass');
+      //img.src = 'compass.png'
+     // img.onload = function() 
+        // Just for reference
+        
+        ctx.translate( 73/2, 73/2 );
+		ctx.rotate( 45 * Math.PI / 180 );
+		ctx.translate( -73/2, -73/2 );
+       
+        
+        ctx.drawImage(img, 0, 0);//,73, 73);
+
+        
+      //
+    }
+    </script>
+  </head>
+  <body onload='startup();'>
+  	<img id="compass" src="compass.png"/>
+    <canvas id="canvas" style="position: absolute; left: 300px; top: 300px;" width="800" height="800"></canvas>
+  </body>
+</html>
